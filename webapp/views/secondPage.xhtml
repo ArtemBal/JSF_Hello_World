@@ -12,20 +12,31 @@
 
     <h:body>
 
-        <h:form>
-            <p:outputLabel id="labelId" title="OutputLabel title" value="#{mainBean.inputText}"/>
+        <div>
+            <h:form>
+                <p:outputLabel id="labelId" title="OutputLabel title" value="#{mainBean.inputText}"/>
 
-            <p:inputText id="inputTextId" placeholder="#{mainBean.inputText}" title="From Managed Bean"
-                         value="#{mainBean.inputText}"/>
+                <p:inputText id="inputTextId" placeholder="#{mainBean.inputText}" title="From Managed Bean"
+                             value="#{mainBean.inputText}"/>
 
-            <br/>
-            <p:outputLabel value="Пример Ajax Обновления" for="ajaxBtnId"/>
-            <p:commandButton id="ajaxBtnId" value="Обновить только поля"
-                             action="#{mainBean.showMessage}"
-                             update="labelId, inputTextId, growlMessageId" />
+                <br/>
+                <p:outputLabel value="Пример Ajax Обновления" for="ajaxBtnId"/>
+                <p:commandButton id="ajaxBtnId" value="Обновить только поля"
+                                 action="#{mainBean.showMessage}"
+                                 update="labelId, inputTextId, growlMessageId" />
 
-            <p:growl id="growlMessageId" showDetail="true" widgetVar="growlMessageId"/>
-        </h:form>
+                <p:growl id="growlMessageId" showDetail="true" widgetVar="growlMessageId"/>
+            </h:form>
+        </div>
+
+
+        <div>
+            <h:form>
+                <h:inputText value="#{mainBean.name}"/>
+            </h:form>
+            Hello, #{mainBean.name} !
+        </div>
+
 
     </h:body>
 </f:view>

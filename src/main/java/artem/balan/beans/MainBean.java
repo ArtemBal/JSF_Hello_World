@@ -10,6 +10,9 @@ import javax.faces.context.FacesContext;
 public class MainBean {
 
     private String inputText;
+    private String name = "Dear student!";
+
+    public String getName() { return name; }
 
     public String getInputText() {
         return inputText;
@@ -18,6 +21,8 @@ public class MainBean {
     public void setInputText(String inputText) {
         this.inputText = inputText;
     }
+
+    public void setName(String name) { this.name = name; }
 
     public void showMessage(){
         FacesMessage message = new FacesMessage("Заголовок", "Частичное обновление страницы");
